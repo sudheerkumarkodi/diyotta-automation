@@ -11,4 +11,5 @@ public class TestConstants {
 	public static final String DRIVER_BINARY_PATH = PROJECT_DIR + "/src/test/resources/drivers/";
 
 	public static final String APP_URL = getTestParameterProperty("app.url");
+	public static final String OHRM_APP_URL = getTestParameterProperty("ohrm.app.url");
 }
