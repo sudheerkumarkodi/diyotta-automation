@@ -13,11 +13,11 @@ public class EmployeeInformationSearchTest {
 	final String dir = System.getProperty("user.dir");
 	//WebDriver driver;
 	
+	CommonTestMethodsForOhrm commonTestMethods = new CommonTestMethodsForOhrm();
+	
 	@Test
-	public void launchBrowser() {
-		/*
-		 * createDriver(); driver.get("https://opensource-demo.orangehrmlive.com/");
-		 * driver.manage().window().maximize();
-		 */
+	public void login() {
+		commonTestMethods.launchOhrmAppURL();
+		
 	}
 }
