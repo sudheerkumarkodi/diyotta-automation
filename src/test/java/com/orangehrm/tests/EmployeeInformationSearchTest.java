@@ -15,8 +15,9 @@ public class EmployeeInformationSearchTest {
 	
 	@Test
 	public void launchBrowser() {
-		createDriver();
-		driver.get("https://opensource-demo.orangehrmlive.com/");
-		driver.manage().window().maximize();
+		/*
+		 * createDriver(); driver.get("https://opensource-demo.orangehrmlive.com/");
+		 * driver.manage().window().maximize();
+		 */
 	}
 }
