@@ -21,7 +21,7 @@ public class DriverCreation {
 			driver = new ChromeDriver();
 			break;
 		case "FIREFOX":
-			System.setProperty("", "");
+			System.setProperty(FIREFOX_DRIVER_KEY, DRIVER_BINARY_PATH + "geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
 		case "IE":
