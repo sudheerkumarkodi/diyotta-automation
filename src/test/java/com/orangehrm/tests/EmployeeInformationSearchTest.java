@@ -18,6 +18,6 @@ public class EmployeeInformationSearchTest {
 	@Test
 	public void login() {
 		commonTestMethods.launchOhrmAppURL();
-		
+		commonTestMethods.login("Admin", "admin123");
 	}
 }
