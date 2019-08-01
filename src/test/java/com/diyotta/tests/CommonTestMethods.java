@@ -12,8 +12,8 @@ public class CommonTestMethods extends DriverCreation {
 
 	public void launchDiyottaAppURL() {
 		createDriver();
-		driver.get(TestConstants.APP_URL);
 		driver.manage().window().maximize();
+		driver.get(TestConstants.APP_URL);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 

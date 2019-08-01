@@ -3,7 +3,7 @@
 <suite name="SmokeSuite">
 	<test name="LoginTestCase">
 		<classes>
-			<class name="com.diyotta.tests.LoginTest" />
+			<class name="com.diyotta.tests.LoginDiyotta" />
 		</classes>
 	</test>
 </suite>
