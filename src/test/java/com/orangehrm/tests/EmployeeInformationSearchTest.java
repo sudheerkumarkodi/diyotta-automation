@@ -8,13 +8,14 @@ import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
 import com.diyotta.tests.CommonTestMethods;
 
+@SuppressWarnings("unused")
 public class EmployeeInformationSearchTest {
 	DriverCreation driverCreation = new DriverCreation();
 	final String dir = System.getProperty("user.dir");
-	//WebDriver driver;
-	
+	// WebDriver driver;
+
 	CommonTestMethodsForOhrm commonTestMethods = new CommonTestMethodsForOhrm();
-	
+
 	@Test
 	public void login() {
 		commonTestMethods.launchOhrmAppURL();

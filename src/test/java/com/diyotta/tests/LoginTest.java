@@ -7,16 +7,16 @@ import com.diyotta.constants.TestConstants;
 public class LoginTest {
 	CommonTestMethods commonTestMethods = new CommonTestMethods();
 
-	@Test
+	@Test(priority = 0)
 	public void login() {
-		commonTestMethods.launchDiyottaAppURL();
+		// commonTestMethods.launchDiyottaAppURL();
 		System.out.println("Login to Application Sucessfully with " + TestConstants.TEST_BROWSER + " browser");
-		commonTestMethods.login("swetha", "P2wd_4321");
+		// commonTestMethods.login("swetha", "P2wd_4321");
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void closeBrowser() {
-		commonTestMethods.closeBrowser();
+		// commonTestMethods.closeBrowser();
 		System.out.println("Closed the browser Sucessfully");
 	}
 
