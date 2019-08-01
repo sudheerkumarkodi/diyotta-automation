@@ -4,12 +4,9 @@ import org.openqa.selenium.By;
 
 public class EmployeeInformationSearch {
 	
-	public By txtUserName = By.id("inputControl_1");
-	public By txtPassword = By.id("inputControl_2");
-	public By loginButton = By.id("inputControl_5");
-	
-	public By orangeHrmUname = By.id("txtUsername");
-	public By orangeHrmPwd = By.id("txtPassword");
+	public By txtUserName = By.id("txtUsername");
+	public By txtPassword = By.id("txtPassword");
+	public By loginButton = By.xpath("//input[@name='Submit']");
 	
 	public By pimMenu = By.id("menu_pim_viewPimModule");
 	public By empName = By.id("empsearch_employee_name_empName");
