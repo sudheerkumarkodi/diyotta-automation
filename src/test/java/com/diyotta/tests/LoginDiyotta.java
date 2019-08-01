@@ -22,12 +22,13 @@ public class LoginDiyotta {
 	@Test(priority = 0)
 	public void login() {
 		commonTestMethods.login(TestConstants.DI_USERNAME, TestConstants.DI_PASSWORD);
-		if (commonTestMethods.getPageTitle().contains("Diyotta | Studio"))
+		if (commonTestMethods.getPageTitle().contains("Studio"))
 			System.out.println("Successfully Login With " + TestConstants.DI_USERNAME + " user.");
 		else
 			System.out.println("Unable to Login to Diyotta.");
 
 	}
+
 	@Test(priority = 1, enabled = false)
 	public void admin() {
 		commonTestMethods.AdminModule("ADMIN");

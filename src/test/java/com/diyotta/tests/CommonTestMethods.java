@@ -25,6 +25,7 @@ public class CommonTestMethods extends DriverCreation {
 		driver.findElement(loginPage.txtUserName).sendKeys(userName);
 		driver.findElement(loginPage.txtPassword).sendKeys(password);
 		driver.findElement(loginPage.loginButton).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		if (driver.findElement(loginPage.warningPopup).isDisplayed()) {
 			System.out.println("Warning pop up Displayed");
 			// WebElement element = driver.findElement(loginPage.warningContain);
