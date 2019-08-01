@@ -2,6 +2,8 @@ package com.diyotta.tests;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebElement;
+
 import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
 import com.diyotta.pages.LoginPage;
@@ -21,6 +23,12 @@ public class CommonTestMethods extends DriverCreation {
 		driver.findElement(loginPage.txtUserName).sendKeys(userName);
 		driver.findElement(loginPage.txtPassword).sendKeys(password);
 		driver.findElement(loginPage.loginButton).click();
+	}
+	
+	public String getPageTitle() {
+		String browserTitle=driver.getTitle();
+		return browserTitle;
+		
 	}
 
 	public void closeBrowser() {
