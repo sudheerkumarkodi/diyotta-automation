@@ -31,7 +31,7 @@ public class LoginDiyotta {
 
 	@Test(priority = 1, enabled = false)
 	public void admin() {
-		commonTestMethods.AdminModule("ADMIN");
+		commonTestMethods.Module("ADMIN");
 		System.out.println("Successfully open Admin.");
 	}
 

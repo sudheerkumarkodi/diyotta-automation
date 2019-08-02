@@ -40,7 +40,7 @@ public class CommonTestMethods extends DriverCreation {
 		return browserTitle;
 	}
 	
-	public void AdminModule(String module) {		
+	public void Module(String module) {		
 		switch (module.toUpperCase()) {
 		case "STUDIO":
 			driver.findElement(commonItems.moduleMenu).click();
