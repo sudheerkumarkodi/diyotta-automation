@@ -1,5 +1,8 @@
 package com.orangehrm.tests;
 
+/**
+ * @author : Sanjay
+ */
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,7 +23,7 @@ public class OrangeHRMLogin {
 		driver.findElement(By.id("inputControl_1")).sendKeys("avinash");
 		driver.findElement(By.id("inputControl_2")).sendKeys("P2wd_1234");
 		driver.findElement(By.id("inputControl_5")).click();
-Thread.sleep(4000);
+		Thread.sleep(4000);
 	}
 
 	public void clickLinks() throws Exception {
