@@ -48,5 +48,33 @@ public class AddNewProjectTest {
 		 * addNewProject.setNewProjectSaveBtn(getDriver());
 		 * addNewProject.setProjectMenu(getDriver());
 		 */
+		
+		/*
+		 * loginDiyotta.openBrowser(); loginDiyotta.login();
+		 * loginDiyotta.driverInstance().findElement(addNewProject.diyottaMenus).click()
+		 * ; loginDiyotta.driverInstance().findElement(addNewProject.adminMenu).click();
+		 * Thread.sleep(10000);
+		 * loginDiyotta.driverInstance().findElement(addNewProject.projectMenu).click();
+		 * loginDiyotta.driverInstance().findElement(addNewProject.newProjectButton).
+		 * click(); WebElement webElement =
+		 * loginDiyotta.driverInstance().findElement(addNewProject.normalProjectBtn);
+		 * Actions act = new Actions(loginDiyotta.driverInstance());
+		 * act.moveToElement(webElement).perform(); webElement.click();
+		 * loginDiyotta.driverInstance().findElement(addNewProject.newProjectName).
+		 * sendKeys("manoj751");
+		 * loginDiyotta.driverInstance().findElement(addNewProject.newProjectCode).
+		 * sendKeys("manoj751");
+		 * loginDiyotta.driverInstance().findElement(addNewProject.newProjectDescription
+		 * ).sendKeys("manoj751");
+		 * loginDiyotta.driverInstance().findElement(addNewProject.addLayers).click();
+		 * loginDiyotta.driverInstance().findElement(addNewProject.layer).click();
+		 * loginDiyotta.driverInstance().findElement(addNewProject.newProjectSaveBtn).
+		 * click(); loginDiyotta.quit();
+		 * 
+		 * 
+		 * public WebDriver driverInstance() { return commonTestMethods.getDriver(); }
+		 */
+		
+		
 	}
 }
