@@ -10,4 +10,6 @@ public class AdminPage {
 	public By scheduler = By.id("");
 	public By lineage = By.id("");
 	public By admin = By.xpath("//li[@id='admin']/a[@title='Admin']/span[0]");
+	
+	
 }
