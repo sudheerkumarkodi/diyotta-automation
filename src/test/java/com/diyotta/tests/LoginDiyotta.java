@@ -29,7 +29,7 @@ public class LoginDiyotta {
 
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void admin() {
 		commonTestMethods.Module("ADMIN");
 		System.out.println("Successfully open Admin.");
