@@ -3,7 +3,7 @@
 <suite name="DiyottaTestCases">
   <test thread-count="5" name="Test Login">
     <classes>
-      <class name="com.diyotta.tests.LoginDiyotta"/>
+      <class name="com.diyotta.tests.AddNewProjectTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

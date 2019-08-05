@@ -2,6 +2,8 @@ package com.orangehrm.tests;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriver;
+
 import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
 import com.orangehrm.pages.EmployeeInformationSearch;
@@ -9,6 +11,7 @@ import com.orangehrm.pages.EmployeeInformationSearch;
 public class CommonTestMethodsForOhrm extends DriverCreation {
 
 	EmployeeInformationSearch loginPage = new EmployeeInformationSearch();
+	WebDriver driver = getDriver();
 
 	public void launchOhrmAppURL() {
 		createDriver();

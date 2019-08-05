@@ -3,6 +3,8 @@ package com.diyotta.tests;
 import java.util.concurrent.TimeUnit;
 
 
+import org.openqa.selenium.WebDriver;
+
 
 import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
@@ -18,61 +20,75 @@ public class CommonTestMethods extends DriverCreation {
 	
 	public void launchDiyottaAppURL() {
 		createDriver();
-		driver.manage().window().maximize();
-		driver.get(TestConstants.APP_URL);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		getDriver().manage().window().maximize();
+		getDriver().get(TestConstants.APP_URL);
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
+	public void launchDiyottaAppURLNew(String browser) {
+		createDriverNew(browser);
+		getDriver().manage().window().maximize();
+		System.out.println(TestConstants.APP_URL);
+		getDriver().get(TestConstants.APP_URL);
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+
+	/**
+	 * @author sysadmin This method is used for login to diyotta appication
+	 * @param userName
+	 * @param password
+	 */
 	public void login(String userName, String password) {
-		driver.findElement(loginPage.txtUserName).sendKeys(userName);
-		driver.findElement(loginPage.txtPassword).sendKeys(password);
-		driver.findElement(loginPage.loginButton).click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		if (driver.findElement(loginPage.warningPopup).isDisplayed()) {
+		getDriver().findElement(loginPage.txtUserName).sendKeys(userName);
+		getDriver().findElement(loginPage.txtPassword).sendKeys(password);
+		getDriver().findElement(loginPage.loginButton).click();
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		if (getDriver().findElement(loginPage.warningPopup).isDisplayed()) {
 			System.out.println("Warning pop up Displayed");
-			// WebElement element = driver.findElement(loginPage.warningContain);
+			// WebElement element =
+			// getDriver().findElement(loginPage.warningContain);
 			// System.out.println(element.getText());
-			// driver.findElement(loginPage.forceLogin).click();
+			// getDriver().findElement(loginPage.forceLogin).click();
 		} else
 			System.out.println("Warning pop up not present");
 	}
 
 	public String getPageTitle() {
-		String browserTitle = driver.getTitle();
+		String browserTitle = getDriver().getTitle();
 		return browserTitle;
 	}
-	
-	public void Module(String module) {		
-		switch (module.toUpperCase()) {
+
+	public void shiftModule(String moduleName) {
+		switch (moduleName.toUpperCase()) {
 		case "STUDIO":
-			driver.findElement(commonItems.moduleMenu).click();
-			driver.findElement(commonItems.moduleAdmin).click();
+			getDriver().findElement(commonItems.moduleMenu).click();
+			getDriver().findElement(commonItems.moduleAdmin).click();
 			break;
 		case "MONITOR":
-			driver.findElement(commonItems.moduleMenu).click();
-			driver.findElement(commonItems.moduleAdmin).click();
+			getDriver().findElement(commonItems.moduleMenu).click();
+			getDriver().findElement(commonItems.moduleAdmin).click();
 			break;
 		case "ADMIN":
-			driver.findElement(commonItems.moduleMenu).click();
-			driver.findElement(commonItems.moduleAdmin).click();		
+			getDriver().findElement(commonItems.moduleMenu).click();
+			getDriver().findElement(commonItems.moduleAdmin).click();
 			break;
 		case "SCHEDULER":
-			driver.findElement(commonItems.moduleMenu).click();
-			driver.findElement(commonItems.moduleAdmin).click();		
+			getDriver().findElement(commonItems.moduleMenu).click();
+			getDriver().findElement(commonItems.moduleAdmin).click();
 			break;
 		default:
 			System.out.println("Please provide valid module name.");
 			break;
 		}
-		
+
 	}
 	
 	
 	
 
 	public void logout() {
-		driver.findElement(commonItems.user).click();
-		driver.findElement(commonItems.logout).click();
+		getDriver().findElement(commonItems.user).click();
+		getDriver().findElement(commonItems.logout).click();
 
 	}
 

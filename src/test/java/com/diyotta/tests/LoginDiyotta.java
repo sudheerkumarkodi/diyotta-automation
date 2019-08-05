@@ -1,14 +1,15 @@
 package com.diyotta.tests;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.diyotta.constants.*;
+
+import com.diyotta.constants.TestConstants;
 
 public class LoginDiyotta {
 	CommonTestMethods commonTestMethods = new CommonTestMethods();
 
-	@BeforeSuite
+	@BeforeClass
 	public void openBrowser() {
 		commonTestMethods.launchDiyottaAppURL();
 		if (commonTestMethods.getPageTitle().contains("Diyotta"))
@@ -31,11 +32,11 @@ public class LoginDiyotta {
 
 	@Test(priority = 1, enabled = false)
 	public void admin() {
-		commonTestMethods.Module("ADMIN");
+		commonTestMethods.shiftModule("ADMIN");
 		System.out.println("Successfully open Admin.");
 	}
 
-	@AfterSuite
+	@Test
 	public void quit() {
 		commonTestMethods.logout();
 		System.out.println("Successfully Logout.");
