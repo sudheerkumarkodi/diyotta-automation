@@ -2,10 +2,7 @@
 target
 test-output
 .settings
-<<<<<<< HEAD
 .classpath
 =======
 /.project
 /.classpath
->>>>>>> 32659f6fe5275170baf5441fd1e759adb3fd2d4c
-pom.xml
