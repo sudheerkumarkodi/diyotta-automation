@@ -6,8 +6,11 @@ public class AgentCreationPage {
 	public By di_Suite = By.xpath("//a[@title='DI Suite']");
 	public By admin = By.xpath("//li[@id='admin']");
 	public By expand=By.xpath("//li[@title='Expand']");
-	public By agents=By.xpath("//img[@src='svg-icons/admin/agents.svg']");
-	public By newAgent=By.xpath("//img[@alt='New']");
+//	public By agents=By.xpath("//img[@src='svg-icons/admin/agents.svg']");
+	public By agents=By.xpath("//span[text()='Agents']");
+//	public By agents=By.xpath("//div[@class='admin-menu-scroll']/li[5]");
+    public By newAgent=By.xpath("//span[text()='New']");
+	
 	
 	
 	

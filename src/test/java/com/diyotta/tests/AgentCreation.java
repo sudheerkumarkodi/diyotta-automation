@@ -5,19 +5,25 @@ import java.util.concurrent.TimeUnit;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
 import com.diyotta.pages.AgentCreationPage;
+import com.diyotta.pages.CommonItems;
 
-public class AgentCreation extends DriverCreation{
+public class AgentCreation {
 	LoginDiyotta loginDiyotta=new LoginDiyotta();
 	CommonTestMethods commonTestMethods =new CommonTestMethods();
 	AgentCreationPage agentCreationPage =new AgentCreationPage();
+	CommonItems commonItems = new CommonItems();
 
 	@BeforeClass
 	public void loginToDiyotta()
 	{
-		loginDiyotta.openBrowser();
-		loginDiyotta.login();
+		commonTestMethods.launchDiyottaAppURL();
+		commonTestMethods.login(TestConstants.DI_USERNAME,TestConstants.DI_PASSWORD);
+		
+//		loginDiyotta.openBrowser();
+//		loginDiyotta.login();
 		
 //		if(getDriver().findElement(By.xpath("//div[@id='loginForciblePopupId']/div/div[3]/div/button[2]")).isDisplayed())
 //			  {
@@ -34,9 +40,11 @@ public class AgentCreation extends DriverCreation{
 	@Test(priority = 0)
 	public void openAdmin()
 	{
-		getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		System.out.println("Admin page");
 //		commonTestMethods.shiftModule("ADMIN");
-		loginDiyotta.admin();
+		commonTestMethods.getDriver().findElement(commonItems.moduleMenu).click();
+		commonTestMethods.getDriver().findElement(commonItems.moduleAdmin).click();
 		System.out.println("Admin page opened");
 	}
 	
@@ -44,10 +52,15 @@ public class AgentCreation extends DriverCreation{
 	public void agentCreationPage()
 	{
 		System.out.println("Click on expand");
-		getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		getDriver().findElement(agentCreationPage.expand).click();
+		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		commonTestMethods.getDriver().findElement(agentCreationPage.expand).click();
+		
 		System.out.println("Click on agents");
-		getDriver().findElement(agentCreationPage.agents).click();
-		getDriver().findElement(agentCreationPage.newAgent).click();
+		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		System.out.println(commonTestMethods.getDriver().findElement(agentCreationPage.agents).isEnabled());
+		commonTestMethods.getDriver().findElement(agentCreationPage.agents).click();
+		System.out.println("Click on New button");
+		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//		commonTestMethods.getDriver().findElement(agentCreationPage.newAgent).click();
 	}
 }
