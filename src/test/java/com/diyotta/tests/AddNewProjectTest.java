@@ -19,13 +19,11 @@ public class AddNewProjectTest {
 	@BeforeClass
 	public void openBrowser() {
 		commonTestMethods.launchDiyottaAppURL();
-		System.out.println("We are in @BeforeClass method");
 	}
 
 	@Test(priority = 0)
 	public void addNewProjectMethod() throws InterruptedException {
 
-		System.out.println("We are in @Test method");
 		commonTestMethods.login(TestConstants.DI_USERNAME, TestConstants.DI_PASSWORD);
 		commonTestMethods.getDriver().findElement(addNewProject.diyottaMenus).click();
 		commonTestMethods.getDriver().findElement(addNewProject.adminMenu).click();
@@ -48,7 +46,6 @@ public class AddNewProjectTest {
 
 	@AfterClass
 	public void logout() throws InterruptedException {
-		System.out.println("We are in @AfterClass method");
 		Thread.sleep(5000);
 		commonTestMethods.logout();
 		commonTestMethods.closeBrowser();
