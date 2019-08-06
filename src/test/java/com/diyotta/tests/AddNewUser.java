@@ -1,25 +1,36 @@
 package com.diyotta.tests;
 
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.diyotta.pages.AddNewProject;
-import com.diyotta.pages.MainMenu;
+import com.diyotta.pages.MainMenuPage;
 
 
 public class AddNewUser {
-	MainMenu mainMenu= new MainMenu();
+	MainMenuPage mainMenu= new MainMenuPage();
 	LoginDiyotta loginDiyotta = new LoginDiyotta();
 	CommonTestMethods commonTestMethods = new CommonTestMethods();
 	
-	@Test(priority = 0)
-	public void addNewUserMethod() {
+	@BeforeTest
+	public void login(){
 		loginDiyotta.openBrowser();
 		loginDiyotta.login();
+	}
+	
+	@Test(priority = 0)
+	public void addNewUserMethod() {
 		commonTestMethods.getDriver().findElement(mainMenu.clickOnMainMenu).click();
 		commonTestMethods.getDriver().findElement(mainMenu.admin).click();
 		
-		loginDiyotta.quit();
+		
+		
 		
 	}
+	
+	public void logOut() {
+		loginDiyotta.quit();
+	}
+	
 
 }

@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="DiyottaTestCases">
-  <test thread-count="5" name="Test Login">
-    <classes>
-      <class name="com.diyotta.tests.AddNewProjectTest"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+	<test thread-count="5" name="Test Login">
+		<groups>
+			<run>
+				<include name="AddUserRole" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.diyotta.tests.TestRunner" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Test Login">
+		<classes>
+			<class name="com.diyotta.tests.AddNewRoleTest" />
+			<class name="com.diyotta.tests.AddNewAgentTest" />
+		</classes>
+	</test>
+</suite>

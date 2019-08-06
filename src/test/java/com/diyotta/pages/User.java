@@ -2,7 +2,7 @@ package com.diyotta.pages;
 
 import org.openqa.selenium.By;
 
-public class AddNewUser {
+public class User {
 
 	public By clickUsers = By.xpath("//a[@title='Users']/img");
 	public By newUser = By.xpath("//div[@title='New']//span[text()='New']");
