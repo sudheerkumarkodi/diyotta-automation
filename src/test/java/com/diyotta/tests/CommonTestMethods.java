@@ -78,6 +78,8 @@ public class CommonTestMethods extends DriverCreation {
 		}
 
 	}
+	
+
 
 	public void logout() {
 		getDriver().findElement(commonItems.user).click();
