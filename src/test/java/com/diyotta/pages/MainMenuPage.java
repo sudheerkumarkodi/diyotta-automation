@@ -2,7 +2,7 @@ package com.diyotta.pages;
 
 import org.openqa.selenium.By;
 
-public class MainMenu {
+public class MainMenuPage {
 	public By clickOnMainMenu = By.xpath("//a[@title='DI Suite']");
 	public By studio = By.id("");
 	public By monitor = By.id("");
