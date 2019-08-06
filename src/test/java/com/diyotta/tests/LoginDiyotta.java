@@ -36,7 +36,7 @@ public class LoginDiyotta {
 		System.out.println("Successfully open Admin.");
 	}
 
-	@AfterClass
+	@Test
 	public void quit() {
 		commonTestMethods.logout();
 		System.out.println("Successfully Logout.");

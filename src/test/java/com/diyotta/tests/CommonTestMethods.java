@@ -2,18 +2,22 @@ package com.diyotta.tests;
 
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.WebDriver;
+
 
 import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
+
 import com.diyotta.pages.CommonItems;
+
 import com.diyotta.pages.LoginPage;
 
 public class CommonTestMethods extends DriverCreation {
 
 	LoginPage loginPage = new LoginPage();
 	CommonItems commonItems = new CommonItems();
-
+	
 	public void launchDiyottaAppURL() {
 		createDriver();
 		getDriver().manage().window().maximize();
