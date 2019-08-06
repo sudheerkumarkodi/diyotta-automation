@@ -11,4 +11,6 @@ public class LoginPage {
 	public By forceLogin = By.xpath("//button[contains(@ng-click,'forciableLogin()')]");
 	public By warningCancel = By.xpath("//button[contains(@ng-click,'loginForciblePopup.close()')]");
 
+	
+	
 }
