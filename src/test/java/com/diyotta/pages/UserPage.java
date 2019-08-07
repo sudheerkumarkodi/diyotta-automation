@@ -1,8 +1,13 @@
 package com.diyotta.pages;
 
-import org.openqa.selenium.By;
+import java.util.concurrent.TimeUnit;
 
-public class User {
+import org.openqa.selenium.By;
+import com.diyotta.drivers.DriverCreation;
+import com.diyotta.tests.CommonTestMethods;
+
+public class UserPage extends DriverCreation{
+	CommonTestMethods commonTestMethods = new CommonTestMethods();
 
 	public By clickUsers = By.xpath("//a[@title='Users']/img");
 	public By newUser = By.xpath("//div[@title='New']//span[text()='New']");
@@ -31,8 +36,26 @@ public class User {
 	 * By.xpath("//a[text()=' Organizations']")).click(); //img[@title='Add']
 	 */
 	// public By By.xpath("//img[@title='Add']")).click();
-
-
+	
+	
+	public void addUser() {
+		commonTestMethods.shiftModule("admin");
+		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		getDriver().findElement(clickUsers).click();
+		getDriver().findElement(newUser).click();
+		getDriver().findElement(uid).sendKeys("test");
+		getDriver().findElement(uname).sendKeys("test");
+		getDriver().findElement(passwd).sendKeys("Test@143");
+		getDriver().findElement(email).sendKeys("test@gmail.com");
+		getDriver().findElement(phoneNo).sendKeys("8566902137");
+		getDriver().findElement(privileges).click();
+		getDriver().findElement(grantadmin).click();
+		getDriver().findElement(saveUser).click();
+	}
+	
+	public void deleteUser() {
+		
+	}
 
 
 }
