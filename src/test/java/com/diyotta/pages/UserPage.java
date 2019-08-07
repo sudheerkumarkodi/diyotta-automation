@@ -39,18 +39,20 @@ public class UserPage extends DriverCreation{
 	
 	
 	public void addUser() {
-		commonTestMethods.shiftModule("admin");
-		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		getDriver().findElement(clickUsers).click();
-		getDriver().findElement(newUser).click();
-		getDriver().findElement(uid).sendKeys("test");
-		getDriver().findElement(uname).sendKeys("test");
-		getDriver().findElement(passwd).sendKeys("Test@143");
-		getDriver().findElement(email).sendKeys("test@gmail.com");
-		getDriver().findElement(phoneNo).sendKeys("8566902137");
-		getDriver().findElement(privileges).click();
-		getDriver().findElement(grantadmin).click();
-		getDriver().findElement(saveUser).click();
+		/*
+		 * commonTestMethods.shiftModule("admin");
+		 * //getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 * getDriver().findElement(clickUsers).click();
+		 * getDriver().findElement(newUser).click();
+		 * getDriver().findElement(uid).sendKeys("test");
+		 * getDriver().findElement(uname).sendKeys("test");
+		 * getDriver().findElement(passwd).sendKeys("Test@143");
+		 * getDriver().findElement(email).sendKeys("test@gmail.com");
+		 * getDriver().findElement(phoneNo).sendKeys("8566902137");
+		 * getDriver().findElement(privileges).click();
+		 * getDriver().findElement(grantadmin).click();
+		 * getDriver().findElement(saveUser).click();
+		 */
 	}
 	
 	public void deleteUser() {
