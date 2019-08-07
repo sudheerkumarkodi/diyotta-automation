@@ -1,5 +1,7 @@
 package com.diyotta.tests;
 
+import java.util.concurrent.TimeUnit;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -23,8 +25,11 @@ public class AddNewUser {
 	}
 
 	@Test
-	public void addNewUserMethod() {
+	public void addNewUserMethod() throws InterruptedException {
+		commonTestMethods.shiftModule("admin");
+		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		commonTestMethods.getDriver().findElement(userPage.clickUsers).click();
+		Thread.sleep(5000);
 		commonTestMethods.getDriver().findElement(userPage.newUser).click();
 		commonTestMethods.getDriver().findElement(userPage.uid).sendKeys("test");
 		commonTestMethods.getDriver().findElement(userPage.uname).sendKeys("test");
