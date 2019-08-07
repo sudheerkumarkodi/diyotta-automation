@@ -23,20 +23,23 @@ public class LoginDiyotta {
 	@Test(priority = 0)
 	public void login() {
 		commonTestMethods.login(TestConstants.DI_USERNAME, TestConstants.DI_PASSWORD);
-		if (commonTestMethods.getPageTitle().contains("Studio"))
-			System.out.println("Successfully Login With " + TestConstants.DI_USERNAME + " user.");
-		else
-			System.out.println("Unable to Login to Diyotta.");
+		System.out.println(commonTestMethods.getPageTitle());
+		/*
+		 * if (commonTestMethods.getPageTitle().contains("Studio"))
+		 * System.out.println("Successfully Login With " + TestConstants.DI_USERNAME +
+		 * " user."); else System.out.println("Unable to Login to Diyotta.");
+		 */
 
 	}
 
 	@Test(priority = 1, enabled = true)
 	public void admin() {
 		commonTestMethods.shiftModule("ADMIN");
+		System.out.println(commonTestMethods.getPageTitle());
 		System.out.println("Successfully open Admin.");
 	}
 
-	@Test
+	@AfterClass
 	public void quit() {
 		commonTestMethods.logout();
 		System.out.println("Successfully Logout.");
