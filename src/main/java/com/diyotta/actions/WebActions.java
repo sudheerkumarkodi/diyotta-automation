@@ -12,5 +12,8 @@ public class WebActions {
 	public void click(WebElement element) {
 		element.click();
 	}
+	
+	
+	
 
 }
