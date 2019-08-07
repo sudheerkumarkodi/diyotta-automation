@@ -2,23 +2,31 @@ package com.diyotta.tests;
 
 import com.diyotta.pagefactory.StudioMenuPageFactory;
 
-public class StudioMenus extends StudioMenuPageFactory {
+public class StudioMenus {
+
+	StudioMenuPageFactory studio = new StudioMenuPageFactory();
 
 	public void shiftMenu(String menuLabel) {
 
 		switch (menuLabel.toUpperCase()) {
 		case "HOME":
-			studioHomeMenu();
+			studio.studioHomeMenu();
+			break;
 		case "DATA POINT":
-			dataPointMenu();
+			studio.dataPointMenu();
+			break;
 		case "DATA OBJECT":
-			dataObjectMenu();
+			studio.dataObjectMenu();
+			break;
 		case "DATA FLOW":
-			dataFlowMenu();
+			studio.dataFlowMenu();
+			break;
 		case "JOB FLOW":
-			jobFlowMenu();
+			studio.jobFlowMenu();
+			break;
 		case "SQL EDITOR":
-			sqlEditorMenu();
+			studio.sqlEditorMenu();
+			break;
 		default:
 			System.out.println("Please provide valid label for menu");
 

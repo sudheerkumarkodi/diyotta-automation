@@ -22,14 +22,10 @@ public class AddNewUser {
 		loginDiyotta.login();
 	}
 	
-	@Test(priority = 0)
+	@Test
 	public void addNewUserMethod() {
-		commonTestMethods.getDriver().findElement(mainMenu.clickOnMainMenu).click();
-		commonTestMethods.getDriver().findElement(mainMenu.admin).click();
 		userPage.addUser();
 		userPage.deleteUser();
-		
-		
 	}
 	@AfterTest
 	public void logOut() {

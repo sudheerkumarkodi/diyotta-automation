@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.diyotta.drivers.DriverCreation;
 
 public class StudioMenuPageFactory {
+
 	DriverCreation driverCreation = new DriverCreation();
 
 	public StudioMenuPageFactory() {
@@ -63,10 +64,10 @@ public class StudioMenuPageFactory {
 	}
 
 	public void studioHomeMenu() {
-		//if (expandMenu != null)
-			driverCreation.getWebActions().click(homeCollapse);
-		//else
-			//driverCreation.getWebActions().click(homeExpand);
+		// if (expandMenu != null)
+		driverCreation.getWebActions().click(homeCollapse);
+		// else
+		// driverCreation.getWebActions().click(homeExpand);
 	}
 
 	public void dataPointMenu() {
