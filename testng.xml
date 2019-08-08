@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.orangehrm.tests.TestNgAnnotations"/>
+      <class name="com.diyotta.tests.CreateDataPoint"/>
+      <class name="com.diyotta.tests.LoginDiyotta"/>
+      <class name="com.diyotta.selenium.ThrowsKeywordEXception"/>
+      <class name="com.diyotta.tests.AgentCreation"/>
+      <class name="com.diyotta.tests.AddNewProjectTest"/>
+      <class name="com.diyotta.tests.LoginTest"/>
+      <class name="com.diyotta.tests.TestRunner"/>
+      <class name="com.diyotta.tests.AddNewRoleTest"/>
+      <class name="com.diyotta.tests.AddNewUser"/>
+      <class name="com.orangehrm.tests.EmployeeInformationSearchTest"/>
+      <class name="com.diyotta.selenium.ThrowUsage"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
