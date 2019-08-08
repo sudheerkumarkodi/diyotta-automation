@@ -12,7 +12,7 @@ import io.cucumber.testng.CucumberOptions;
 		plugin = {
 		"pretty", "html:target/cucumber-reports/htmlReports/",
 		"json:target/cucumber-reports/jsonReports/executionReport.json" },
-		tags = "@Login"
+		tags = "@Login,@Regression,~@Smoke"
 		)
 public class TestRunner extends AbstractTestNGCucumberTests {
 

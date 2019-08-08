@@ -1,7 +1,7 @@
 @AddNewProject
 Feature: Check for Adding New Project
 
- @TestAddNewProjectScenario
+  @TestAddNewProjectScenario
   Scenario: As a user I want to test add new project
     Given I am launching the browser
     When I enter username and password
@@ -18,7 +18,3 @@ Feature: Check for Adding New Project
     Then I click on save button
     Then I click on Logout button and close button
     Then I should be able to close the browser
-    
-    
-    
-    
