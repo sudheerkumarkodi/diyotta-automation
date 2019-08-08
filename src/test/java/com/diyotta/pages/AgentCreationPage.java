@@ -13,7 +13,7 @@ public class AgentCreationPage {
     public By agentName=By.id("inputControl_1");
     public By agentHost=By.id("inputControl_4");
     public By agentPort=By.id("inputControl_8");
-    public By agentSave=By.id("//img[@alt='Save']");
+    public By agentSave=By.xpath("//img[@alt='Save']");
  
     
 	
