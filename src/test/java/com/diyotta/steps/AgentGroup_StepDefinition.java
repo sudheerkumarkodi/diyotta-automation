@@ -1,4 +1,4 @@
-package com.diyotta.tests;
+package com.diyotta.steps;
 
 
 

@@ -1,7 +1,9 @@
-package com.diyotta.tests;
+package com.diyotta.steps;
 
 import com.diyotta.pages.AgentGroup;
+
 import com.diyotta.pages.LoginPage;
+import com.diyotta.tests.CommonTestMethods;
 
 public class AgentGroupCreation extends CommonTestMethods {
 
