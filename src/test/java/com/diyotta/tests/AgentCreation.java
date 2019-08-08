@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.diyotta.actions.WebActions;
 import com.diyotta.constants.TestConstants;
 import com.diyotta.drivers.DriverCreation;
 import com.diyotta.pages.AgentCreationPage;
@@ -15,6 +16,8 @@ public class AgentCreation {
 	CommonTestMethods commonTestMethods =new CommonTestMethods();
 	AgentCreationPage agentCreationPage =new AgentCreationPage();
 	CommonItems commonItems = new CommonItems();
+	WebActions webActions=new WebActions();
+	DriverCreation driverCreation =new DriverCreation();
 
 	@BeforeClass
 	public void loginToDiyotta()
@@ -42,25 +45,31 @@ public class AgentCreation {
 	{
 		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		System.out.println("Admin page");
-//		commonTestMethods.shiftModule("ADMIN");
-		commonTestMethods.getDriver().findElement(commonItems.moduleMenu).click();
-		commonTestMethods.getDriver().findElement(commonItems.moduleAdmin).click();
+		commonTestMethods.shiftModule("ADMIN");
+//		commonTestMethods.getDriver().findElement(commonItems.moduleMenu).click();
+//		commonTestMethods.getDriver().findElement(commonItems.moduleAdmin).click();
 		System.out.println("Admin page opened");
 	}
 	
 	@Test(priority = 1,enabled = true)
-	public void agentCreationPage()
+	public void agentCreationPage() throws InterruptedException
 	{
 		System.out.println("Click on expand");
 		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		commonTestMethods.getDriver().findElement(agentCreationPage.expand).click();
 		
 		System.out.println("Click on agents");
-		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+//		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		System.out.println(commonTestMethods.getDriver().findElement(agentCreationPage.agents).isEnabled());
-		commonTestMethods.getDriver().findElement(agentCreationPage.agents).click();
+		Thread.sleep(5000);
+//		commonTestMethods.getDriver().findElement(agentCreationPage.agents).click();
+		webActions.click(commonTestMethods.getDriver().findElement(agentCreationPage.agents));
+		
 		System.out.println("Click on New button");
-		commonTestMethods.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//		commonTestMethods.getDriver().findElement(agentCreationPage.newAgent).click();
+		Thread.sleep(3000);
+		commonTestMethods.getDriver().findElement(agentCreationPage.newAgent).click();
+		commonTestMethods.getDriver().findElement(agentCreationPage.agentName).sendKeys("test");
+		commonTestMethods.getDriver().findElement(agentCreationPage.agentHost).sendKeys("172.40.4.4");
+		commonTestMethods.getDriver().findElement(agentCreationPage.agentPort).sendKeys("1234");
 	}
 }
