@@ -7,6 +7,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
+<<<<<<< HEAD
+		<dependency>
+			<groupId>com.sikulix</groupId>
+			<artifactId>sikulixapi</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+=======
 		<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
 		<dependency>
 			<groupId>com.codoid.products</groupId>
@@ -14,6 +21,7 @@
 			<version>1.18</version>
 		</dependency>
 
+>>>>>>> 47fbd8945eebc07d356ad325ec9cf6683d759bd6
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
