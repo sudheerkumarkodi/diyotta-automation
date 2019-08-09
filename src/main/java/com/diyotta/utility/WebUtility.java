@@ -2,10 +2,16 @@ package com.diyotta.utility;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -14,6 +20,27 @@ import com.diyotta.drivers.DriverCreation;
 public class WebUtility extends DriverCreation {
 
 	Actions actions = new Actions(getDriver());
+
+	// Take Screenshot
+	public void takeScreenshot(WebDriver driver, String filePath) throws IOException {
+
+		// 2 ways to capture screenshot
+		//File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		//String screenshotBase64 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+
+		// STEP1: Convert web driver object to TakeScreenshot
+		TakesScreenshot scrShot = ((TakesScreenshot) driver);
+
+		// STEP2: Call getScreenshotAs method to create image file
+		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+
+		// STEP3: Move image file to new destination
+		File DestFile = new File(filePath);
+
+		// STEP4: Copy file at destination
+		FileUtils.copyFile(SrcFile, DestFile);
+
+	}
 
 	// left click
 	public void clickOnElement(WebElement element) {
