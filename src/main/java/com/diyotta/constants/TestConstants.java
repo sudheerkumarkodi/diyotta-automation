@@ -17,4 +17,7 @@ public class TestConstants {
 	
 	public static final String CHROME_VERSION =  getTestParameterProperty("chrome.binary.version");
 	public static final String FIREFOX_VERSION =  getTestParameterProperty("firefox.binary.version");
+	public static final String AD_PROJECT_NAME =  getTestParameterProperty("admin.projectName");
+	public static final String AD_PROJECT_CODE =  getTestParameterProperty("admin.projectCode");
+	public static final String AD_PROJECT_DESC =  getTestParameterProperty("admin.projectDesc");
 }
