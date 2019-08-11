@@ -1,16 +1,18 @@
 package com.diyotta.tests;
 
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.diyotta.constants.*;
+
+import com.diyotta.constants.TestConstants;
 
 public class LoginDiyotta {
 	CommonTestMethods commonTestMethods = new CommonTestMethods();
 
-	@BeforeSuite
+	@BeforeClass
 	public void openBrowser() {
 		commonTestMethods.launchDiyottaAppURL();
-		if (commonTestMethods.getPageTitle() == "Diyotta ")
+		if (commonTestMethods.getPageTitle().contains("Diyotta"))
 			System.out.println(
 					"Successfully Connect to Diyotta " + TestConstants.TEST_BROWSER.toUpperCase() + " Browser.");
 		else
@@ -18,13 +20,31 @@ public class LoginDiyotta {
 
 	}
 
-	@Test
+	@Test(priority = 0)
 	public void login() {
 		commonTestMethods.login(TestConstants.DI_USERNAME, TestConstants.DI_PASSWORD);
-		if (commonTestMethods.getPageTitle() == " Diyotta | Studio")
-			System.out.println("Successfully Login With "+TestConstants.DI_USERNAME+" user.");
-		else
-			System.out.println("Unable to Login to Diyotta");
+		System.out.println(commonTestMethods.getPageTitle());
+		/*
+		 * if (commonTestMethods.getPageTitle().contains("Studio"))
+		 * System.out.println("Successfully Login With " + TestConstants.DI_USERNAME +
+		 * " user."); else System.out.println("Unable to Login to Diyotta.");
+		 */
+
+	}
+
+	@Test(priority = 1, enabled = true)
+	public void admin() {
+		commonTestMethods.shiftModule("ADMIN");
+		System.out.println(commonTestMethods.getPageTitle());
+		System.out.println("Successfully open Admin.");
+	}
+
+	@AfterClass
+	public void quit() {
+		commonTestMethods.logout();
+		System.out.println("Successfully Logout.");
+		commonTestMethods.closeBrowser();
+		System.out.println("Browser Closed.");
 	}
 
 }

@@ -1,31 +1,49 @@
 package com.diyotta.drivers;
 
-import static com.diyotta.constants.TestConstants.*;
+import static com.diyotta.constants.TestConstants.CHROME_VERSION;
+import static com.diyotta.constants.TestConstants.FIREFOX_VERSION;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import com.diyotta.actions.WebActions;
 import com.diyotta.constants.TestConstants;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverCreation {
 
-	public WebDriver driver;
+	private WebDriver driver;
+	private WebActions webActions;
 
-	public void createDriver() {
+	public WebActions getWebActions() {
+		return webActions;
+	}
+
+	public DriverCreation() {
+		webActions = new WebActions();
+	}
+
+	public WebDriver createDriver() {
 
 		switch (TestConstants.TEST_BROWSER.toUpperCase()) {
 		case "CHROME":
-			System.setProperty(CHROME_DRIVER_KEY, DRIVER_BINARY_PATH + "chromedriver.exe");
+			// System.setProperty(CHROME_DRIVER_KEY, DRIVER_BINARY_PATH +
+			// "chromedriver.exe");
+			WebDriverManager.chromedriver().version(CHROME_VERSION).setup();
 			driver = new ChromeDriver();
 			break;
 		case "FIREFOX":
-			System.setProperty(FIREFOX_DRIVER_KEY, DRIVER_BINARY_PATH + "geckodriver.exe");
+			// System.setProperty(FIREFOX_DRIVER_KEY, DRIVER_BINARY_PATH +
+			// "geckodriver.exe");
+			WebDriverManager.firefoxdriver().version(FIREFOX_VERSION).setup();
 			driver = new FirefoxDriver();
 			break;
 		case "IE":
-			System.setProperty("", "");
+			// System.setProperty("", "");
+			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 			break;
 		default:
@@ -34,6 +52,41 @@ public class DriverCreation {
 			break;
 		}
 
+		return driver;
+
+	}
+
+	public WebDriver createDriverNew(String browser) {
+
+		switch (browser.toUpperCase()) {
+		case "CHROME":
+			// System.setProperty(CHROME_DRIVER_KEY, DRIVER_BINARY_PATH +
+			// "chromedriver.exe");
+			WebDriverManager.chromedriver().version(CHROME_VERSION).setup();
+			driver = new ChromeDriver();
+			break;
+		case "FIREFOX":
+			// System.setProperty(FIREFOX_DRIVER_KEY, DRIVER_BINARY_PATH +
+			// "geckodriver.exe");
+			WebDriverManager.firefoxdriver().version(FIREFOX_VERSION).setup();
+			driver = new FirefoxDriver();
+			break;
+		case "IE":
+			// System.setProperty("", "");
+			WebDriverManager.iedriver().setup();
+			driver = new InternetExplorerDriver();
+			break;
+		default:
+			System.out.println("INFO: Enter correct browser name and rerun the script....");
+			System.exit(0);
+			break;
+		}
+
+		return driver;
+	}
+
+	public WebDriver getDriver() {
+		return this.driver;
 	}
 
 	public void destroyDriver() {
